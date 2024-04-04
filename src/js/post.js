@@ -1,11 +1,21 @@
 (async () => {
-  const getBlogPostXML = await fetch("http://localhost:5500/blog/posts_1/dynamic_blog_test.xml"); // CHANGE ME TO THE `main` BRANCH WHEN READY
+  const getAllURLParams = window.location.search;
+  const urlParams = new URLSearchParams(getAllURLParams);
+
+  const blogTitleFile = urlParams.get("title");
+
+  if(!blogTitleFile) {
+    window.location.replace("https://neetdemon.neocities.org/not_found.html");
+    return;
+  }
+
+  const getBlogPostXML = await fetch(`https://raw.githubusercontent.com/NEETdemon/neetdemon-blog-data/main/posts/${blogTitleFile}.xml`); // CHANGE ME TO THE `main` BRANCH WHEN READY
   const parser = new DOMParser();
 
   if(getBlogPostXML.status !== 200) {
     switch(getBlogPostXML.status) {
       case 404:
-        window.location.replace("https://neetdemon.neocities.org/not_found.html")
+        window.location.replace("https://neetdemon.neocities.org/not_found.html");
         break;
       default:
         alert("Error getting blog data! RUH ROH RAGGY!!!");
@@ -20,7 +30,7 @@
   
   const blogTitle = xmlDoc.getElementsByTagName("blogtitle")[0].innerHTML;
   const blogDate = xmlDoc.getElementsByTagName("blogdate")[0].innerHTML;
-  const blogHeader = xmlDoc.getElementsByTagName("headerimg")[0].innerHTML;
+  const blogHeaderName = xmlDoc.getElementsByTagName("imgname")[0].innerHTML;
   const headerAlt = xmlDoc.getElementsByTagName("headeralt")[0].innerHTML;
   const blogContent = xmlDoc.getElementsByTagName("blogcontent")[0]
                       .innerHTML
@@ -89,7 +99,7 @@
 
   const headerImg = document.createElement("img");
   headerImg.id = "blog-post-image-thumbnail";
-  headerImg.src = blogHeader;
+  headerImg.src = `https://raw.githubusercontent.com/NEETdemon/neetdemon-blog-data/main/img/${blogTitleFile}/${blogHeaderName}`;
   headerImg.alt = headerAlt;
 
   headerImageContainer.appendChild(headerImg);
