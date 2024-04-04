@@ -1,0 +1,35 @@
+.blog-post-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+}
+
+#page-title-and-date-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-title {
+    font-size: 42px;
+    text-align: left !important;
+}
+
+.date-created {
+    text-align: left !important;
+    margin-top: 60px !important;
+}
+
+#blog-post-image-thumbnail {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#blog-body-content-container {
+    margin-top: 10px;
+    font-size: medium;
+}
+
+#end-transmission {
+    font-family: "induction";
+    margin: 10px auto;
+}

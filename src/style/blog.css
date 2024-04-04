@@ -1,0 +1,23 @@
+.blog-title {
+    font-family: "induction", "elron", monospace;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    border: white 1px solid;
+}
+
+.blog-title-and-date {
+    display: flex;
+    flex-direction: row;
+}
+
+.blog-create-date {
+    margin-left: 12px;
+}
+
+.blog-category {
+    display: flex;
+    flex-direction: row;
+}
