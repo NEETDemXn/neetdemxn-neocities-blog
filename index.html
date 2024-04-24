@@ -24,13 +24,27 @@
         </div>
         <nav class="border">
             <ul class="list-none flex flex-row text-white justify-evenly">
-                <a href="/"><li class="nav">/home</li></a>
-                <a href="/blog"><li class="nav">/blog</li></a>
-                <a href="/coming_soon.html"><li class="nav">/music</li></a>
-                <a href="/coming_soon.html"><li class="nav">/videos</li></a>
-                <a href="/coming_soon.html"><li class="nav">/tools</li></a>
-                <a href="/coming_soon.html"><li class="nav">/links</li></a>
-                <a href="/coming_soon.html"><li class="nav">/donate</li></a>
+                <a href="/">
+                    <li class="nav">/home</li>
+                </a>
+                <a href="/blog">
+                    <li class="nav">/blog</li>
+                </a>
+                <a href="/coming_soon.html">
+                    <li class="nav">/music</li>
+                </a>
+                <a href="/coming_soon.html">
+                    <li class="nav">/videos</li>
+                </a>
+                <a href="/coming_soon.html">
+                    <li class="nav">/tools</li>
+                </a>
+                <a href="/coming_soon.html">
+                    <li class="nav">/links</li>
+                </a>
+                <a href="/coming_soon.html">
+                    <li class="nav">/donate</li>
+                </a>
             </ul>
         </nav>
         <div class="flex flex-row w-full justify-between mt-4">
@@ -69,17 +83,14 @@
 
                 </div>
             </div>
-            <div class="flex flex-col">
-                <h3 class="underline decoration-double">Latest Blog Posts</h3>
-                <ul class="list-disc">
-                    <li>Test #11892718927</li>
-                    <li>Test #2</li>
-                    <li>Test #3</li>
-                    <li>Test #4</li>
+            <div id="blog-list-container" class="flex flex-col">
+                <h3 id="blog-list-header" class="underline decoration-double mb-2">Latest Blog Posts</h3>
+                <ul id="list-disc">
                 </ul>
             </div>
         </div>
     </div>
+    <script src="/src/js/global.js"></script>
     <script src="/src/js/index.js"></script>
 </body>
 
