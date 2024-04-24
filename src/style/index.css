@@ -1,3 +1,12 @@
 #first-word {
     font-family: "induction", "elron", monospace;
 }
+
+#blog-list-header {
+    font-family: "induction", "elron", monospace;
+    font-size: x-small;
+}
+
+.blog-post-title {
+    margin: 2px 0;
+}
